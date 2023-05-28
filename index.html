@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reproductor de vídeo</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>Reproductor de vídeo</h1>
+  <label for="file-selector">Selecciona un vídeo</label>
+  <input type="file" id="fileInput" accept="video/*">
+  <br><br>
+  <video id="videoPlayer" controls></video>
+  <div id="controls">
+    <button id="playButton">Reproducir</button>
+    <button id="pauseButton">Pausar</button>
+    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+  </div>
+  <div id="loadingMessage" style="display: none;">Cargando vídeo...</div>
+  <div id="unsupportedMessage" style="display: none; color: red;">El navegador no admite este tipo de archivo.</div>
+
+  <script src="main.js"></script>
+  <script>
+    var videoPlayer = document.getElementById('videoPlayer');
+    var unsupportedMessage = document.getElementById('unsupportedMessage');
+
+    if (!videoPlayer.canPlayType) {
+      videoPlayer.style.display = 'none';
+      unsupportedMessage.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
