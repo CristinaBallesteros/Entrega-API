@@ -19,13 +19,6 @@ video {
     font-weight: bold;
     margin-top: 10px;
   }
-  
-  #unsupportedMessage {
-    display: none;
-    color: red;
-    font-weight: bold;
-    margin-top: 10px;
-  }
 
   button {
     background-color: #2589e6; 
